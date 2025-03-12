@@ -11,6 +11,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
 import com.model.Employee;
+import com.model.EmployeeInfo;
 
 public class HibernateUtil {
 
@@ -35,7 +36,7 @@ public class HibernateUtil {
 
 			registery = new StandardServiceRegistryBuilder().applySettings(map).build();
 
-			MetadataSources mds = new MetadataSources(registery).addAnnotatedClass(Employee.class);
+			MetadataSources mds = new MetadataSources(registery).addAnnotatedClass(Employee.class).addAnnotatedClass(EmployeeInfo.class);
 					
 
 			Metadata md = mds.getMetadataBuilder().build();

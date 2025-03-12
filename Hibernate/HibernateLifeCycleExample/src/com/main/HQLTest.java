@@ -22,8 +22,8 @@ public class HQLTest {
 		System.out.println(employee);
 		
 		//update employee set name=? where id = ?
-		Query<Employee> query1 = session.createQuery("update Employee set name=:n where id =:id1",Employee.class);
-		query1.setParameter("n", "Anonymous");
+		Query<?> query1 = session.createQuery("update Employee set name=:n where id =:id1");
+		query1.setParameter("n", "Anon");
 		query1.setParameter("id1", 1);
 		int i = query1.executeUpdate();
 		System.out.println(i + " Row Updated");
